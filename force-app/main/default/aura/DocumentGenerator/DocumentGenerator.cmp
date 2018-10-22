@@ -1,0 +1,29 @@
+<aura:component implements="force:appHostable">
+    <aura:attribute name="accountIds" type="String[]" />
+    <aura:handler name="searchEvent" event="c:AccountSearchResult" action="{!c.updateAccountIds}" />
+    <aura:attribute name="selectedAccount" type="Account" />
+    <aura:handler name="selectedAccountEvent" event="c:SelectedAccount" action="{!c.updateSelectedAccount}" />
+    <lightning:layout multipleRows="true" pullToBoundary="small">
+        <lightning:layoutItem padding="horizontal-small" size="12">
+            <lightning:card>
+                <aura:set attribute="title">
+                    <lightning:icon iconName="utility:edit_form" size="small" />
+                    Choose Account and create new document 1
+                </aura:set>
+            </lightning:card>
+        </lightning:layoutItem>
+        <lightning:layoutItem padding="around-small" size="12" mediumDeviceSize="6" largeDeviceSize="4">
+            <div class="page-section search-box slds-box">
+                <div class="search-input">
+                    <c:AccountSearch />
+                </div>
+                <c:AccountList accountIds="{!v.accountIds}" />
+            </div>
+        </lightning:layoutItem>
+        <lightning:layoutItem padding="around-small" size="12" mediumDeviceSize="6" largeDeviceSize="8">
+            <div class="page-section content-box slds-box">
+                <c:DocumentContent account="{!v.selectedAccount}" />
+            </div>
+        </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>

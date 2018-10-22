@@ -1,0 +1,28 @@
+<aura:component controller="DocumentGenerator">
+    <aura:attribute name="documentId" type="String" />
+    <aura:attribute name="content" type="String" />
+    <aura:attribute name="title" type="String" />
+    <aura:attribute name="account" type="Account" />
+    <aura:attribute name="timer" type="Integer" />
+    <aura:handler name="init" value="{! this }" action="{! c.init }" />
+
+
+    <lightning:input onchange="{!c.validate}" value="{!v.title}" name="title" label="Title" required="true"
+        messageWhenValueMissing="An empty title." />
+    <lightning:textarea name="content" required="true" value="{!v.content}" onchange="{!c.validate}" placeholder="Type something interesting"
+        label="Content" messageWhenValueMissing="An empty content." />
+    <lightning:layout multipleRows="true" pullToBoundary="small">
+        <lightning:layoutItem padding="around-small" size="12">
+            <lightning:tile label="{!v.account.Name}" href="{!'/one/one.app?#/sObject/'+ v.account.Id + '/view'}">
+            </lightning:tile>
+            <lightning:button aura:id="disableButtonId" class="slds-float_right" variant="brand" disabled="true" label="Create document"
+                title="Create document" onclick="{!c.createDocument}" />
+        </lightning:layoutItem>
+        <lightning:layoutItem padding="around-small" size="12">
+            <div class="slds-align_absolute-center">
+                <lightning:fileCard fileId="{!v.documentId}" description="{!v.title}" />
+            </div>
+        </lightning:layoutItem>
+    </lightning:layout>
+
+</aura:component>

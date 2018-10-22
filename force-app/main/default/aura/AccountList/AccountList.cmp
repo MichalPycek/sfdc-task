@@ -1,0 +1,19 @@
+<aura:component controller="AccountListController">
+    <!-- events -->
+    <aura:registerEvent name="selectedAccountEvent" type="c:SelectedAccount" />
+    <!-- attributes -->
+    <aura:attribute name="accountIds" type="String[]" />
+    <aura:attribute name="data" type="Object" />
+    <aura:attribute name="columns" type="List" />
+    <aura:attribute name="maxRowSelection" type="Integer" default="1" />
+    <!-- handlers-->
+    <aura:handler name="change" value="{!v.accountIds}" action="{!c.onSearchResultChange}" />
+    <aura:handler name="init" value="{! this }" action="{! c.init }" />
+    <p>Results: {!v.accountIds.length}</p>
+    <div style="height: 60vh;">
+        <lightning:datatable columns="{! v.columns }" data="{! v.data }" keyField="id" maxRowSelection="{! v.maxRowSelection }"
+            onrowselection="{! c.updateSelectedText }" />
+    </div>
+
+
+</aura:component>

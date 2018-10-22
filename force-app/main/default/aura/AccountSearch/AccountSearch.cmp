@@ -1,0 +1,9 @@
+<aura:component controller="AccountSearchController">
+    <aura:registerEvent name="searchEvent" type="c:AccountSearchResult" />
+    <aura:attribute name="isSearching" type="Boolean" default="false" />
+    <aura:attribute name="searchText" type="String" default="" />
+    <div onkeyup="{!c.searchAccount}">
+        <lightning:input aura:id="search-input" value="{!v.searchText}" name="search-input" label="Search for Account"
+            isLoading="{! v.isSearching }" type="search" />
+    </div>
+</aura:component>

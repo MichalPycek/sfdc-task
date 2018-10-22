@@ -1,0 +1,15 @@
+{
+    "Username": "office-clerk@sfdc-task.org",
+    "LastName": "Hopkins",
+    "Email": "facoyesi@zdenka.net",
+    "Alias": "clerk1",
+    "TimeZoneSidKey": "America/Denver",
+    "LocaleSidKey": "en_US",
+    "EmailEncodingKey": "UTF-8",
+    "LanguageLocaleKey": "en_US",
+    "profileName": "Standard Platform User",
+    "permsets": [
+        "DocGenerator"
+    ],
+    "generatePassword": true
+}

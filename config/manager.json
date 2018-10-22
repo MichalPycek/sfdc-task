@@ -1,0 +1,15 @@
+{
+    "Username": "manager@sfdc-task.org",
+    "LastName": "Washington",
+    "Email": "facoyesi@zdenka.net",
+    "Alias": "manager1",
+    "TimeZoneSidKey": "America/Denver",
+    "LocaleSidKey": "en_US",
+    "EmailEncodingKey": "UTF-8",
+    "LanguageLocaleKey": "en_US",
+    "profileName": "Standard Platform User",
+    "permsets": [
+        "DocGenerator"
+    ],
+    "generatePassword": true
+}
