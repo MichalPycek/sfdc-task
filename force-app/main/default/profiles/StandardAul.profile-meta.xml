@@ -14,10 +14,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <custom>false</custom>
-    <tabVisibilities>
-        <tab>DocumentGenerator</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
     <userLicense>Salesforce Platform</userLicense>
     <userPermissions>
         <enabled>true</enabled>

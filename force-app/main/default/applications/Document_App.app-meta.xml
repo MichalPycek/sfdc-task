@@ -9,7 +9,6 @@
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <label>Document App</label>
     <navType>Standard</navType>
-    <tabs>standard-Account</tabs>
     <tabs>DocumentGenerator</tabs>
     <tabs>standard-File</tabs>
     <uiType>Lightning</uiType>

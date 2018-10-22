@@ -9,10 +9,7 @@
         let button = component.find('disableButtonId');
         let content = component.get('v.content');
         let title = component.get('v.title');
-        console.log('content ', content);
-        console.log('title ', title);
         timeout = setTimeout(() => {
-            console.log('set timeout ');
             if (content && title) {
                 button.set('v.disabled', false);
             } else {
@@ -30,16 +27,13 @@
         if (account) {
             accountId = account.Id;
         }
-        console.log('content ', content);
-        console.log('title ', title);
-        console.log('account ', account);
         action.setParams({ accountId: accountId, title: title, content: content });
         action.setCallback(this, (response) => {
             let state = response.getState();
             if (state === 'SUCCESS') {
                 let contentDocumentId = response.getReturnValue();
-                console.log('contentDocumentId ', contentDocumentId);
                 component.set('v.documentId', contentDocumentId);
+                component.set('v.title', title);
             } else if (state === "ERROR") {
                 let errors = response.getError();
                 if (errors) {

@@ -8,7 +8,7 @@
             <lightning:card>
                 <aura:set attribute="title">
                     <lightning:icon iconName="utility:edit_form" size="small" />
-                    Choose Account and create new document 1
+                    Choose Account and create new document
                 </aura:set>
             </lightning:card>
         </lightning:layoutItem>
